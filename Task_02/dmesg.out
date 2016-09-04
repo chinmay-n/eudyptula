@@ -1,0 +1,4 @@
+[    0.000000] Linux version 4.8.0-rc2-ChinmayARCH-00401-g5d2b7c4 (chinmay@modbot) (gcc version 6.1.1 20160802 (GCC) ) #2 SMP PREEMPT Thu Sep 1 19:30:15 IST 2016
+[    0.000000] Command line: initrd=\initramfs-linux481.img initrd=\intel-ucode.img root=PARTUUID=696a1cff-1fd4-42ce-a4ad-bbfd291716b9 rw
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
