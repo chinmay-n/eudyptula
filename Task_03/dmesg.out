@@ -1,0 +1,2 @@
+[    0.000000] Linux version 4.8.0-eudyptula-ChinmayARCH-00534-gfe3b35b-dirty (chinmay@modbot) (gcc version 6.1.1 20160802 (GCC) ) #1 SMP PREEMPT Mon Sep 5 23:56:18 IST 2016
+[    0.000000] Command line: initrd=\initramfs-linux472.img initrd=\intel-ucode.img root=PARTUUID=696a1cff-1fd4-42ce-a4ad-bbfd291716b9 rw
