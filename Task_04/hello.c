@@ -10,8 +10,8 @@ static int __init hello_module_init(void)
 
 static void __exit hello_cleanup(void)
 {
-	pr_debug("Module by Chinmay 
-		Nivsarkar<mit.chinmayn@gmail.com>");
+	pr_debug("Module by Chinmay Niv
+		sarkar<mit.chinmayn@gmail.com>");
 }
 
 module_init(hello_module_init);
