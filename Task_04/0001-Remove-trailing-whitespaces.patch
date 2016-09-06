@@ -1,0 +1,28 @@
+From aec77ebf2c6bca9eb5ba52f753e38a63da85f3ee Mon Sep 17 00:00:00 2001
+From: Chinmay Nivsarkar <mit.chinmayn@gmail.com>
+Date: Tue, 6 Sep 2016 14:15:51 +0530
+Subject: [PATCH] Remove trailing whitespaces
+
+Signed-off-by: Chinmay Nivsarkar <mit.chinmayn@gmail.com>
+---
+ Task_04/hello.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Task_04/hello.c b/Task_04/hello.c
+index 61ba052..5059191 100644
+--- a/Task_04/hello.c
++++ b/Task_04/hello.c
+@@ -10,8 +10,8 @@ static int __init hello_module_init(void)
+ 
+ static void __exit hello_cleanup(void)
+ {
+-	pr_debug("Module by Chinmay 
+-		Nivsarkar<mit.chinmayn@gmail.com>");
++	pr_debug("Module by Chinmay Niv
++		sarkar<mit.chinmayn@gmail.com>");
+ }
+ 
+ module_init(hello_module_init);
+-- 
+2.9.3
+
