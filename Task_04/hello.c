@@ -2,13 +2,15 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-static int __init hello_module_init(void){
-	printk(KERN_DEBUG "Hello World");
+static int __init hello_module_init(void)
+{
+	pr_debug("Hello World");
 	return 0;
 }
 
-static void __exit hello_cleanup(void){
-	printk(KERN_DEBUG "Module by Chinmay 
+static void __exit hello_cleanup(void)
+{
+	pr_debug("Module by Chinmay 
 		Nivsarkar<mit.chinmayn@gmail.com>");
 }
 
