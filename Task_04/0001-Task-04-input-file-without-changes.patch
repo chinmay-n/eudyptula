@@ -1,0 +1,59 @@
+From 17787dd6d652fb2ee7bfd9de1062a00ac5280f43 Mon Sep 17 00:00:00 2001
+From: Chinmay Nivsarkar <mit.chinmayn@gmail.com>
+Date: Tue, 6 Sep 2016 14:19:54 +0530
+Subject: [PATCH] Task 04 input file, without changes
+
+---
+ Task_04/coding_style.c | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+ create mode 100644 Task_04/coding_style.c
+
+diff --git a/Task_04/coding_style.c b/Task_04/coding_style.c
+new file mode 100644
+index 0000000..9fd8f59
+--- /dev/null
++++ b/Task_04/coding_style.c
+@@ -0,0 +1,40 @@
++#include <linux/module.h>
++#include <linux/kernel.h>
++#include <asm/delay.h>
++#include <linux/slab.h>
++
++int do_work( int * my_int, int retval ) {
++	int x;
++	int y=*my_int;
++	int z;
++	
++	for(x=0;x< * my_int;++x) {
++		udelay(10);
++	}
++
++	if (y < 10 )
++		// That was a long sleep, tell userspace about it
++		printk("We slept a long time!");
++
++	z = x * y;
++
++	return z;
++}
++
++int
++my_init (void)
++{
++	int x = 10;
++
++	x = do_work(&x, x);
++
++	return x;
++}
++
++void my_exit( void )
++{
++	return;
++}
++
++module_init(my_init);
++module_exit(my_exit);
+-- 
+2.9.3
+
