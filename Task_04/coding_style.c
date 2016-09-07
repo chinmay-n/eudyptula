@@ -32,3 +32,7 @@ void my_exit(void)
 
 module_init(my_init);
 module_exit(my_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("little@eudyptula-challenge.org");
+MODULE_DESCRIPTION("Random module");
