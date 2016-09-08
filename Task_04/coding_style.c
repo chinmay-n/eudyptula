@@ -21,14 +21,13 @@ int do_work(int *my_int, int retval)
 int my_init(void)
 {
 	int x = 10;
-	
+
 	x = do_work(&x, x);
 	return x;
 }
 
 void my_exit(void)
 {
-	return;
 }
 
 module_init(my_init);
