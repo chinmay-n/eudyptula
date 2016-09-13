@@ -1,6 +1,8 @@
 #include <linux/init.h>
 #include <linux/module.h>
-#include <linux/kernel.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("c78fb75d06e4");
 
 static int __init hello_module_init(void)
 {
