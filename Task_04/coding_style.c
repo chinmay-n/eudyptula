@@ -13,9 +13,8 @@ int do_work(int *my_int, int retval)
 		udelay(10);
 
 	if (y < 10)
-		// That was a long sleep, tell userspace about it
+		/* That was a long sleep, tell userspace about it */
 		pr_debug("We slept a long time!");
-
 	z = x * y;
 	return z;
 }
@@ -23,13 +22,14 @@ int do_work(int *my_int, int retval)
 int my_init(void)
 {
 	int x = 10;
+
 	x = do_work(&x, x);
+
 	return x;
 }
 
 void my_exit(void)
 {
-	return;
 }
 
 module_init(my_init);
