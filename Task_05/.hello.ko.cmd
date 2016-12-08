@@ -1,0 +1,1 @@
+cmd_/home/chinmay/kernel/eudyptula/Eudyptula/Task_05/hello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/chinmay/kernel/eudyptula/Eudyptula/Task_05/hello.ko /home/chinmay/kernel/eudyptula/Eudyptula/Task_05/hello.o /home/chinmay/kernel/eudyptula/Eudyptula/Task_05/hello.mod.o

@@ -9,20 +9,6 @@
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("c78fb75d06e4");
 
-struct usb_host_interface *key;
-
-
-static void hello_cleanup(void)
-{
-	pr_notice("Module by Chinmay Nivsarkar\n");
-}
-
-static int hello_module_init(void)
-{
-	pr_debug("Hello World");
-
-	return 0;
-}
 
 static struct usb_device_id hello_table [] = {
         { USB_INTERFACE_INFO(USB_INTERFACE_CLASS_HID,
@@ -31,30 +17,42 @@ static struct usb_device_id hello_table [] = {
     { }
 };
 
+static int hello_probe(struct usb_interface *intf,
+	const struct usb_device_id *id)
+{
+	return 0;
+}
+
+static void hello_disconn(struct usb_interface *intf)
+{
+	return;
+}
+
 struct usb_driver hello_driver = {
 .name = "hello",
 .id_table = hello_table,
-.probe = usb_hello_init,
-.disconnect = usb_hello_exit,
+.probe = hello_probe,
+.disconnect = hello_disconn,
 };
 
 MODULE_DEVICE_TABLE(usb, hello_table);
 
-static int __init usb_hello_init(void)
-{	
-	int ret = device_register(&hello);
-	if(ret)
-		pr_notice("Failed to register");
-	pr_notice("Used hello driver");
-	hello_module_init();
-	hello_cleanup();
-	return ret;
-}
-
-static void __exit usb_hello_exit(void)
+static void __exit hello_cleanup(void)
 {
-	usb_deregister(&hello);
+	usb_deregister(&hello_driver);
+	pr_notice("Module by Chinmay Nivsarkar\n");
 }
 
-module_init(usb_hello_init);
-module_exit(usb_hello_exit);
+static int __init hello_module_init(void)
+{
+	if(!usb_register(&hello_driver))
+		pr_debug("Hello World");
+	else
+		pr_debug("Module inserted");
+
+	return 0;
+}
+
+
+module_init(hello_module_init);
+module_exit(hello_cleanup);
