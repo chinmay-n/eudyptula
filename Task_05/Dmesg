@@ -1,0 +1,10 @@
+[ 8513.367993] wlo1: authenticate with dc:ce:c1:72:ed:10
+[ 8513.370712] wlo1: send auth to dc:ce:c1:72:ed:10 (try 1/3)
+[ 8513.377549] wlo1: authenticated
+[ 8513.378898] wlo1: associate with dc:ce:c1:72:ed:10 (try 1/3)
+[ 8513.384759] wlo1: RX AssocResp from dc:ce:c1:72:ed:10 (capab=0x421 status=0 aid=4)
+[ 8513.396590] wlo1: associated
+[ 8513.396653] IPv6: ADDRCONF(NETDEV_CHANGE): wlo1: link becomes ready
+[ 8628.206001] usbcore: deregistering interface driver hello
+[ 8628.206026] Module by Chinmay Nivsarkar
+[ 8636.748280] usbcore: registered new interface driver hello
