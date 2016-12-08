@@ -9,12 +9,15 @@
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("c78fb75d06e4");
 
+struct usb_host_interface *key;
+
+
 static void hello_cleanup(void)
 {
 	pr_notice("Module by Chinmay Nivsarkar\n");
 }
 
-static int __init hello_module_init(void)
+static int hello_module_init(void)
 {
 	pr_debug("Hello World");
 
@@ -37,19 +40,21 @@ struct usb_driver hello_driver = {
 
 MODULE_DEVICE_TABLE(usb, hello_table);
 
-static int usb_hello_init(void)
+static int __init usb_hello_init(void)
 {	
 	int ret = device_register(&hello);
 	if(ret)
 		pr_notice("Failed to register");
 	pr_notice("Used hello driver");
+	hello_module_init();
+	hello_cleanup();
 	return ret;
 }
 
-static void usb_hello_exit(void)
+static void __exit usb_hello_exit(void)
 {
 	usb_deregister(&hello);
 }
 
-module_init(hello_module_init);
-module_exit(hello_cleanup);
+module_init(usb_hello_init);
+module_exit(usb_hello_exit);
